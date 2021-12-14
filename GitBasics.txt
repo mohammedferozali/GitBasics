@@ -1,0 +1,85 @@
+Git Basics on CMD - 
+Required*
+Download Git from https://git-scm.com/download/win
+
+--------------------------------------------------------------------------------------
+
+Modifying PATH on Windows 10:
+
+In the Start Menu or taskbar search, search for "environment variable".
+Select "Edit the system environment variables".
+Click the "Environment Variables" button at the bottom.
+Double-click the "Path" entry under "System variables".
+With the "New" button in the PATH editor, add C:\Program Files\Git\bin\ 
+and C:\Program Files\Git\cmd\ to the end of the list.
+Close and re-open your console.
+
+--------------------------------------------------------------------------------------
+
+Common Git Commands - 
+1. git init
+2. git remote add origin
+3. git status
+4. git add .
+5. git status
+6. git commit -m "test"
+7. git push origin master
+
+---------------------------------------------------------------------------------------
+
+1. Click on Properties and Copy the Project Path - C:\Users\NEW-PC\git\repository\VzAutomationTest
+2. Open CMD and type cd C:\Users\NEW-PC\git\repository\VzAutomationTest
+3. Initialize the GIT.
+4. Enter "git init" on CMD
+5. Now this will be shown "Initialized empty Git repository in C:/Users/NEW-PC/git/repository/VzAutomationTest/.git/"
+6. On the particular path .Git will be created and it is hidden file.
+7. Enter "dir" to check .git file created or not. (For mac its ls -alt)
+8. Now for linking the project go to Github where project is available, click on code --> copy path ex: git@github.com:mohammedferozali/SeleniumPageObjectModel.git
+9. Enter the CMD - C:\Users\NEW-PC\git\repository\VzAutomationTest>"git remote add origin git@github.com:mohammedferozali/SeleniumPageObjectModel.git"
+10. To Link use this command git remote add origin git@github.com:mohammedferozali/SeleniumPageObjectModel.git
+11. Link is done now and connnection has been established. 
+12. Enter "git status" to check the pending files to be added. 
+13. Enter "git add ." to select the files 
+14. Enter "git status" to see the ready to commit files. Files will be shown in green color. 
+15. Enter git config --global user.name "mohammedferozali" (Same name as given in GitHub)
+16. Enter git config --global user.email "qatferoz@gmail.com" (Same email id as given in GitHub)
+17. Now Enter "git commit -m "Pending Files"
+18. Enter "git push origin master"
+19. Below error message will be shown at first 
+20. The authenticity of host 'github.com (XXXXXXXXXX)' can't be established.
+RSA key fingerprint is XXXXXXXXXXXXXXXXXXXXXX.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? no
+Host key verification failed.
+21. Click NO
+22. Now you will see this error 
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+23. Now create SSH Key - Public Key
+24. Go to Github --> Settings --> SSH and GPG Keys --> New SSH Key
+25. Go to https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows
+26. Above is for generating SSH Keys. 
+27. Now Download PuttyGen to generate the SSH Keys https://www.puttygen.com/download-putty
+28. Or Perform from GitBash (Refer this Video How to Generate SSH Key from GitBash https://www.youtube.com/watch?v=mNtQ55quG9M)
+29. Open GitBash
+30. Enter ssh-keygen
+31. It will show where the Key generated with Path 
+Example - Enter file in which to save the key (/c/Users/NEW-PC/.ssh/id_rsa):
+32. Enter Thrice till you get the SSH key generated
+33. Go to the created folder and see the SSH keys generated C:\Users\NEW-PC\.ssh
+34. Open the id_rsa.pub file in Notepad++ and copy the Key generated. 
+35. Now Go to Github --> Settings --> SSH and GPG Keys --> New SSH Key --> Paste the SSH Key.  
+
+"git clone" https://github.com/mohammedferozali/SeleniumPageObjectModel.git (GitHub HTTPS URL) to clone
+"git pull origin master" is to pull the updated code from github
+
+------------------------------------------------------------------------------------------------------------
+
+For Best Install SourceTree 
+1. Click on Remote Project
+2. Select GitHub from the dropdown
+3. Enter the GitHub Authentication (AuthToken) - accept the pop up
+4. Clone the Project from Github
+5. Close existing Project from eclipse and import the cloned project
+6. Now you can easily commit the changes. 
